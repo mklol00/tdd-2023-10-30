@@ -4,12 +4,17 @@ public class Calc {
             return 0;
         }
         if (exp.contains("-")) {
-            return 0;
+            String[] expBits = exp.split(" \\- ");
+
+            int num1 = Integer.parseInt(expBits[0]);
+            int num2 = Integer.parseInt(expBits[1]);
+            return num1 - num2;
+
         }
 
-        String[] exps = exp.split(" \\+ ");
-        int num1 = Integer.parseInt(exps[0]);
-        int num2 = Integer.parseInt(exps[1]);
+        String[] expsBits = exp.split(" \\+ ");
+        int num1 = Integer.parseInt(expsBits[0]);
+        int num2 = Integer.parseInt(expsBits[1]);
         return num1 + num2;
 
     }
